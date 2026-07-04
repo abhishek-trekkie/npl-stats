@@ -13,13 +13,13 @@ templ Base(title string) {
 			<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css"/>
 			<link rel="stylesheet" href="/static/css/fonts.css"/>
 		</head>
-		<body class="min-h-screen bg-gray-50 text-gray-900">
+		<body class="min-h-screen bg-[#2A3136] text-[#E1E2E4]">
 			@components.Header()
-			@components.Navbar()
 			<main>
 				{ children... }
 			</main>
 			@components.Footer()
+			@components.Navbar()
 			<script src="https://unpkg.com/lucide@latest"></script>
 			<script>lucide.createIcons();</script>
 		</body>

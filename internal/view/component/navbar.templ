@@ -1,17 +1,22 @@
 package components
 
 templ Navbar() {
-	<nav class="border-b bg-white">
-		<div class="mx-auto flex h-16 items-center justify-between px-4">
-			<a href="/" class="text-lg font-bold">
-				Cricket
+	<nav
+		class="bg-[#2A3136] text-[#E1E2E4] fixed bottom-0 left-0 right-0 z-50 h-16 pb-[env(safe-area-inset-bottom"
+	>
+		<div class="mx-auto flex h-full max-w-md items-center justify-around">
+			<a href="/" class="text-sm font-medium">
+				Home
 			</a>
-			<button
-				class="rounded border px-3 py-2 text-sm"
-				type="button"
-			>
-				Menu
-			</button>
+			<a href="/players" class="text-sm font-medium">
+				Players
+			</a>
+			<a href="/search" class="text-sm font-medium">
+				Search
+			</a>
+			<a href="/teams" class="text-sm font-medium">
+				Teams
+			</a>
 		</div>
 	</nav>
 }
