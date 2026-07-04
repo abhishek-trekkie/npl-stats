@@ -76,8 +76,8 @@ Thumbs.db
 # Generated files (uncomment if you DON'T want to commit them)
 # -----------------------------------------------------------------------------
 
-# *_templ.go
-# internal/sqlc/
+*_templ.go
+internal/sqlc/
 
 # -----------------------------------------------------------------------------
 # Embedded assets (if generated)
