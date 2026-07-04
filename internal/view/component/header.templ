@@ -1,0 +1,16 @@
+package components
+
+templ Header(title string, subtitle string) {
+	<header class="bg-gray-100 px-4 py-8">
+		<div class="mx-auto">
+			<h1 class="text-3xl font-bold">
+				{ title }
+			</h1>
+			if subtitle != "" {
+				<p class="mt-2 text-gray-600">
+					{ subtitle }
+				</p>
+			}
+		</div>
+	</header>
+}
