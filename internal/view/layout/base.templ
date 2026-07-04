@@ -1,23 +1,27 @@
 package layout
 
+import "github.com/habu-gabu/npl-stats/internal/view/component"
+
 templ Base(title string) {
 	<!DOCTYPE html>
 	<html lang="en">
 		<head>
 			<meta charset="UTF-8"/>
-			<meta
-				name="viewport"
-				content="width=device-width, initial-scale=1.0"
-			/>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 			<title>{ title }</title>
-			<link href="/static/css/output.css" rel="stylesheet"/>
+			<script src="https://cdn.tailwindcss.com"></script>
+			<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css"/>
+			<link rel="stylesheet" href="/static/css/fonts.css"/>
 		</head>
 		<body class="min-h-screen bg-gray-50 text-gray-900">
+			@components.Header()
 			@components.Navbar()
 			<main>
 				{ children... }
 			</main>
 			@components.Footer()
+			<script src="https://unpkg.com/lucide@latest"></script>
+			<script>lucide.createIcons();</script>
 		</body>
 	</html>
 }

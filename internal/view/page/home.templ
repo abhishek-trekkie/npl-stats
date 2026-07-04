@@ -4,22 +4,8 @@ import "github.com/habu-gabu/npl-stats/internal/view/layout"
 
 templ Home() {
 	@layout.Base("Home") {
-		@components.Header(
-			"Welcome",
-			"Cricket statistics made simple",
-		)
 		<section class="px-4 py-6">
-			<div class="space-y-4">
-				<div class="rounded-lg bg-white p-4 shadow">
-					Card 1
-				</div>
-				<div class="rounded-lg bg-white p-4 shadow">
-					Card 2
-				</div>
-				<div class="rounded-lg bg-white p-4 shadow">
-					Card 3
-				</div>
-			</div>
+			<h1>Welcome to NPL Stats</h1>
 		</section>
 	}
 }
