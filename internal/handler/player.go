@@ -11,6 +11,12 @@ type PlayerHandler struct {
 	App *config.Application
 }
 
+func NewPlayerHandler(app *config.Application) *PlayerHandler {
+	return &PlayerHandler{
+		App: app,
+	}
+}
+
 func (h *PlayerHandler) GetPlayer(c *echo.Context) error {
 	id := c.Param("id")
 
