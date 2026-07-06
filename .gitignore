@@ -76,7 +76,11 @@ Thumbs.db
 # -----------------------------------------------------------------------------
 
 *_templ.go
-internal/sqlc/gen
+internal/sqlc/**
+!internal/sqlc/queries/
+!internal/sqlc/queries/**
+!internal/sqlc/schemas/
+!internal/sqlc/schemas/**
 
 # -----------------------------------------------------------------------------
 # Embedded assets (if generated)
