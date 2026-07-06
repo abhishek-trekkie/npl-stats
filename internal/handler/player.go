@@ -4,6 +4,7 @@ import (
 	"strconv"
 
 	"github.com/habu-gabu/npl-stats/internal/config"
+	"github.com/habu-gabu/npl-stats/internal/view/page"
 	"github.com/labstack/echo/v5"
 )
 
@@ -28,4 +29,14 @@ func (h *PlayerHandler) GetPlayer(c *echo.Context) error {
 	}
 
 	return c.JSON(200, player)
+}
+
+func (h *PlayerHandler) ListPlayers(c *echo.Context) error {
+
+	players, err := h.App.Queries.ListPlayers(c.Request().Context())
+	if err != nil {
+		return c.JSON(500, err.Error())
+	}
+
+	return Respond(c, page.ListPlayers(players), players)
 }

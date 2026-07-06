@@ -13,6 +13,7 @@ func registerRoutes(e *echo.Echo, app *config.Application) {
 
 	playerHander := handler.NewPlayerHandler(app)
 	players := e.Group("/players")
+	players.GET("", playerHander.ListPlayers)
 	players.GET("/:id", playerHander.GetPlayer)
 
 }
