@@ -4,16 +4,16 @@ import (
 	"flag"
 	"os"
 
+	"github.com/habu-gabu/npl-stats/internal/sqlc"
 	"github.com/jackc/pgx/v5/pgxpool"
 	"github.com/joho/godotenv"
 )
 
 type Application struct {
-	DB     *pgxpool.Pool
-	Config *Config
-	// Queries *sqlc.Queries
+	DB      *pgxpool.Pool
+	Config  *Config
+	Queries *sqlc.Queries
 }
-
 type Config struct {
 	Host      string
 	Port      int
