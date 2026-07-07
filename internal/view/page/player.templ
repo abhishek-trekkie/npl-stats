@@ -1,11 +1,28 @@
 package page
 
-import "github.com/habu-gabu/npl-stats/internal/view/layout"
+import (
+	"github.com/habu-gabu/npl-stats/internal/sqlc"
+	"github.com/habu-gabu/npl-stats/internal/view/component"
+	"github.com/habu-gabu/npl-stats/internal/view/layout"
+)
 
-templ Player() {
-	@layout.Base("Player") {
+templ ListPlayers(players []sqlc.ListPlayersRow) {
+	@layout.Base("Players") {
 		<section class="px-4 py-6">
-			<h1>Player Details</h1>
+			<h1 class="text-2xl font-bold mb-6">Top Batsmen</h1>
+			<div class="space-y-4">
+				for _, player := range players {
+					@components.PlayerCard(player)
+				}
+			</div>
+		</section>
+		<section class="px-4 py-6">
+			<h1 class="text-2xl font-bold mb-6">Top Bowlers</h1>
+			<div class="space-y-4">
+				for _, player := range players {
+					@components.PlayerCard(player)
+				}
+			</div>
 		</section>
 	}
 }

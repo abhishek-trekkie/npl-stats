@@ -1,0 +1,17 @@
+package components
+
+import "github.com/habu-gabu/npl-stats/internal/sqlc"
+
+templ PlayerCard(player sqlc.ListPlayersRow) {
+	<div
+		class="bg-[#0B0E0F] px-5 py-3 rounded-lg border p-4 shadow-sm border-[#2A3136] font-semibold text-[#E1E2E4] tracking-wide"
+	>
+		<h2 class="text-lg font-semibold">{ player.Name }</h2>
+		<p>
+			{ player.Country.String } <span class="fi fi-np scale-125 inline-block"></span>
+		</p>
+		<p>
+			{ player.Class.String }
+		</p>
+	</div>
+}

@@ -6,6 +6,8 @@ import (
 
 	"github.com/habu-gabu/npl-stats/internal/config"
 	"github.com/habu-gabu/npl-stats/internal/router"
+	"github.com/habu-gabu/npl-stats/internal/sqlc"
+
 	"github.com/jackc/pgx/v5/pgxpool"
 	"github.com/labstack/echo/v5"
 	"github.com/labstack/echo/v5/middleware"
@@ -27,8 +29,9 @@ func main() {
 	}
 
 	app := &config.Application{
-		DB:     pool,
-		Config: cfg,
+		DB:      pool,
+		Config:  cfg,
+		Queries: sqlc.New(pool),
 	}
 
 	e := echo.New()

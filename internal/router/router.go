@@ -11,6 +11,11 @@ func registerRoutes(e *echo.Echo, app *config.Application) {
 
 	e.GET("/", home.Index)
 
+	playerHander := handler.NewPlayerHandler(app)
+	players := e.Group("/players")
+	players.GET("", playerHander.ListPlayers)
+	players.GET("/:id", playerHander.GetPlayer)
+
 }
 
 func registerStaticRoutes(e *echo.Echo, app *config.Application) {
